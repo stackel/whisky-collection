@@ -5,7 +5,7 @@ import ListItem from 'components/list/list-item/ListItem';
 export default function List({listItems}) {
 
   const ListItemComponents = listItems.map(item => {
-    return <ListItem whisky={item}/>
+    return <ListItem key={item.name} whisky={item}/>
   })
 
   return (

@@ -16,6 +16,7 @@ import Finish from 'components/whisky/Finish'
 import Rating from 'components/whisky/Rating'
 import ListItem from 'components/list/list-item/ListItem'
 import List from 'components/list/List'
+import ListWithControls from 'components/list/ListWithControls'
 import Sort from 'components/list/sort/Sort'
 import Filter from 'components/list/filter/Filter'
 
@@ -75,4 +76,6 @@ storiesOf('List', module).add('ListItem', () => <ListItem whisky={whisky}/>).add
 )
 .add('List', () => <List listItems={whiskyList}/>)
 .add('Sort', () => <Sort sortBy={"name"} onChange={actions.onSortChange}/>)
-.add('Filter', () => <Filter onChange={actions.onFilterChange}/>);
+.add('Filter', () => <Filter onChange={actions.onFilterChange}/>)
+.add('ListWithControls', () => <ListWithControls listItems={whiskyList}/>)
+;

@@ -28,11 +28,11 @@ export default function Sort({sortBy, onChange}) {
   ]
 
   const fieldComponents = fields.map(field => {
-    return <MenuItem value={field.value}>{field.name}</MenuItem>
+    return <MenuItem key={field.value} value={field.value}>{field.name}</MenuItem>
   })
 
   return (
-    <Select value={sortBy} onChange={onChange}>
+    <Select className="w-100" value={sortBy} onChange={onChange}>
       {fieldComponents}
     </Select>
   );
