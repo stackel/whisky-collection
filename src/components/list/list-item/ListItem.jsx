@@ -21,7 +21,7 @@ export default function ListItem({whisky, checkbox, checked, onCheckboxChange}) 
   }
 
   return (
-    <MaterialListItem button="button" component="a" href={"/" + whisky.name}>
+    <MaterialListItem disableGutters button component="a" href={"/" + whisky.name}>
       <ListItemText primary={whisky.name} secondary={secondaryText}></ListItemText>
       <ListItemCheckBox show={checkbox}/>
     </MaterialListItem>

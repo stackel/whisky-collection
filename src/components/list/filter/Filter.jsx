@@ -53,13 +53,19 @@ const cost = _.keys(_.countBy(whiskyList, function (whiskyList) {
   field: "cost"
 }});
 
+/*const names = _.keys(_.countBy(whiskyList, function (whiskyList) {
+	return whiskyList.name;
+})).map(name => { return {
+  label: name,
+  value: name,
+  field: "name"
+}});*/
 
 const suggestions = types.concat(cost).concat(classes).concat(countries)
 
 const styles = theme => ({
 	root: {
 		flexGrow: 1,
-		height: 250,
 	},
 	input: {
 		display: 'flex',
@@ -245,21 +251,12 @@ function MultiValue(props) {
 	};
 
 	class Filter extends React.Component {
-		constructor(props) {
-			super(props)
-		}
-
-		handleChange = name => value => {
-			this.setState({
-				[name]: value,
-			});
-		};
-
 		render() {
 			const {
 				classes,
 				theme,
-				onChange
+				onChange,
+				filters
 			} = this.props;
 
 			const selectStyles = {
@@ -285,24 +282,18 @@ function MultiValue(props) {
 				styles = {
 					selectStyles
 				}
-				textFieldProps = {
-					{
-						label: 'Label',
-						InputLabelProps: {
-							shrink: true,
-						},
-					}
-				}
+
 				options = {
 					suggestions
 				}
 				components = {
 					components
 				}
+				defaultValue={filters}
 				onChange = {
 					onChange
 				}
-				placeholder = "Filter on type, country, cost or class... "
+				placeholder = "Filter... "
 				isMulti /
 				>
 				<

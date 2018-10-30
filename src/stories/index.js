@@ -18,6 +18,7 @@ import ListItem from 'components/list/list-item/ListItem'
 import List from 'components/list/List'
 import ListWithControls from 'components/list/ListWithControls'
 import Sort from 'components/list/sort/Sort'
+import Search from 'components/list/search/Search'
 import Filter from 'components/list/filter/Filter'
 
 //export const whisky = whiskyList[0]
@@ -40,6 +41,7 @@ export const actions = {
   onRatingChange: action('onRatingChange'),
   onCheckboxChange: action('onCheckboxChange'),
   onSortChange: action('onSortChange'),
+  onSearchChange: action('onSearchChange'),
   onFilterChange: action('onFilterChange')
 };
 
@@ -76,6 +78,7 @@ storiesOf('List', module).add('ListItem', () => <ListItem whisky={whisky}/>).add
 )
 .add('List', () => <List listItems={whiskyList}/>)
 .add('Sort', () => <Sort sortBy={"name"} onChange={actions.onSortChange}/>)
+.add('Search', () => <Search query="" onChange={actions.onSearchChange}/>)
 .add('Filter', () => <Filter onChange={actions.onFilterChange}/>)
 .add('ListWithControls', () => <ListWithControls listItems={whiskyList}/>)
 ;
